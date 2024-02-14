@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="ArMOUR is a mobile app which will make your life safer and will give opportunity to report location with a keyword">
+    <meta name="author" content="Inovatik">
+    <meta property="og:site_name" content="" />
+    <meta property="og:site" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <title>Serg's Online Shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="images/hh-modified.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>   
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("0wqizMjUJvWl-z2Po");
+        })();
+    </script>
+</head>
+
+
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <a class="navbar-brand logo-image" href="index.html"><img src="images/hh-modified.png" alt="alternative"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        
+        <div class="language-menu" id="languageMenu">
+            <button class="language-btn" onclick="toggleDropdown()">Language</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <a class="contenten" onclick="changeLanguage('en')">English</a>
+                <a class="contentes" onclick="changeLanguage('es')">Español</a>
+                <a class="contenthy" onclick="changeLanguage('hy')">Հայերեն</a>
+            </div>
+        </div>
+
+        <div id="userDashboard">
+            <div class="userlogin">
+                <button class="user-btn" onclick="OpenUserSet()">
+                    <span id="userspan" class="material-icons">
+                        person
+                    </span>
+                </button>
+            </div>
+            <div id="OpenUserSet">
+                <button id="XuserBtn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                    <h1 style="font-size: 16px;
+                    color: black; 
+                    font-family: 'Courier New', Courier, monospace;
+                    align-items: center;
+                    transform: translateY(15px);
+                    margin-top: -7px;
+                    width: fit-content;
+                    margin-left: 6%;
+                    ">Your Information</h1>
+                <hr>
+                    <div class="userDATA">
+                        <h1 style="font-size: 15px;
+                                color: black;
+                                font-family: arial;
+                                flex-grow: 1;">Name:</h1><span id="loggedInUser"></span>
+                    </div>
+                <hr>
+                    <div class="userDATA">
+                        <h1 style="font-size: 15px;
+                                color: black;
+                                font-family: arial;
+                                flex-grow: 1;">Email:</h1><span id="loggedInEmail"></span>
+                    </div>
+                <hr>
+                    <div class="userDATA">
+                        <h1 style="font-size: 15px;
+                                color: black;
+                                font-family: arial;
+                                flex-grow: 1;">Password:</h1><span id="loggedInPassword"></span>
+                    </div>
+                <hr>
+                <button id="logoutBtn" class="logoutBtn" type="button" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        
+
+        <script src="https://pro.fontawesome.com/releases/v6.0.0-beta1/js/all.js" integrity="sha384-..."
+            crossorigin="anonymous"></script>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Purchases">PURCHASES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#login" onclick="TouchLoginBtn()">LOG IN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#signup" onclick="TouchSignupBtn()">SIGN UP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+                <li id="openBtn">
+                    <p>
+                        <span id="quantity">0</span>
+                        <img class="carticon" src="images/carticon.png">
+                    </p>
+                </li>
+                
+                
+
+                <div id="miniWindow">
+                    <p class="ordpurch">Ordered Purchases</p>
+                    <button id="closeBtn">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                    <hr style="color: black;">
+                    <p style="color: black; font-size: 14.5px;">
+                        Selected Size: <span id="selected-size">size</span>
+                    </p>
+                    <p style="color: black;">
+                        Quantity: <span id="Quantity">0</span>
+                    </p>
+                    <hr style="color: black;">
+
+                    <p class="endwindow">Thank You For Trusting Us</p>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-container">
+                            <h1>SHOP <span id="js-rotating">FASTER, AVAILABLE, CREATIVE</span></h1>
+                            <p class="p-heading p-large">Serg's Online Shop is the first international shop made in
+                                Armenia.</p>
+                            <a class="btn-solid-lg page-scroll" href="#about">DISCOVER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="about" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <div class="section-title">ABOUT</div>
+                        <h2>We Offer One Of The Best Online Shop in Armenia</h2>
+                        <p>Our WEBSITE was founded In 2023 In Armenia, the city of Yerevan, By Serg Ghazaryan and Nare
+                            Movsisyan in TUMO Yerevan.</p>
+                        <div class="testimonial-author">Team Serg's Online Shop</div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/intro-office.jpg" alt="alternative">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <div class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Our Team Members</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <!-- Team Member -->
+                    <div class="team-member">
+                        <div class="image-wrapper">
+                            <img class="img-fluid" src="images/team-1.png" alt="alternative">
+                        </div> <!-- end of image-wrapper -->
+                        <p class="p-large">Nare Movsisyan</p>
+                        <p class="job-title">Business Manager</p>
+                    </div>
+                    <!-- end of team member -->
+
+
+                    <!-- Team Member -->
+                    <div class="team-member">
+                        <div class="image-wrapper">
+                            <img class="img-fluid" src="images/team-1.png" alt="alternative">
+                        </div> <!-- end of image-wrapper -->
+                        <p class="p-large">Sergey Ghazaryan</p>
+                        <p class="job-title">CEO Founder</p>
+                    </div> <!-- end of team-member -->
+
+
+                    <!-- Team Member -->
+                    <div class="team-member">
+                        <div class="image-wrapper">
+                            <img class="img-fluid" src="images/team-1.png" alt="alternative">
+                        </div> <!-- end of image wrapper -->
+                        <p class="p-large">Sona Ghazaryan</p>
+                        <p class="job-title">Developer</p>
+                    </div> <!-- end of team-member -->
+
+
+                    <!-- Description -->
+                    <div class="cards-1">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <!-- Services -->
+                                    <div id="services" class="cards-2">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="section-title">SERVICES</div>
+                                                    <h2></h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+
+                                                    <!-- Card -->
+                                                    <div class="card">
+                                                        <div class="card-image">
+                                                            <img class="img-fluid" src="images/services-1.png"
+                                                                alt="alternative">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h3 class="card-title">Free Deliver</h3>
+                                                            <p>We suggest free delivery for a minimum order of $25.</p>
+                                                            <ul class="list-unstyled li-space-lg">
+                                                            </ul>
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of card -->
+
+                                                    <!-- Card -->
+                                                    <div class="card">
+                                                        <div class="card-image">
+                                                            <img class="img-fluid" src="images/services-2.png"
+                                                                alt="alternative">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h3 class="card-title">Franchising</h3>
+                                                            <p>If you want to know the details connected with
+                                                                franchising please let us know by email.</p>
+                                                            <ul class="list-unstyled li-space-lg">
+                                                            </ul>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- end of card -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>         
+                                    
+                                    <div id="customerReviews">
+                                        <h2>Customer Reviews</h2>
+                                        <div id="reviewsList"></div>
+                                        <input type="name" class="ratingform" id="ratingName" placeholder="Name">
+                                        <textarea id="reviewInput" placeholder="Write your review..."></textarea>
+                                        <div id="starRating">
+                                            <span class="material-icons" onclick="setRating(1)" id="star1">star_border</span>
+                                            <span class="material-icons" onclick="setRating(2)" id="star2">star_border</span>
+                                            <span class="material-icons" onclick="setRating(3)" id="star3">star_border</span>
+                                            <span class="material-icons" onclick="setRating(4)" id="star4">star_border</span>
+                                            <span class="material-icons" onclick="setRating(5)" id="star5">star_border</span>
+                                        </div>
+                                        <button onclick="submitReview()">Submit Review</button>
+                                    </div>
+                                    
+
+                                    <!-- Projects -->
+                                    <div id="Purchases" class="filter">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="section-title">PURCHASES</div>
+                                                    <h2>Purchases We Suggest</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <!-- Filter -->
+                                                    <div class="button-group filters-button-group">
+                                                        <a class="button is-checked"
+                                                            data-filter="*"><span>ALL</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>T-SHIRT</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>JEANS</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>SHORT</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>SHOES</span></a>
+                                                        <a class="button" 
+                                                        data-filter=".design"><span>BAGS</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>SOCKS</span></a>
+                                                        <a class="button"
+                                                            data-filter=".development"><span>ACCSESOUIR</span></a>
+                                                    </div> <!-- end of button group -->
+                                                    <div class="grid">
+                                                        <div class="element-item design marketing">
+                                                            <a class="popup-with-move-anim" href="#project-7">
+                                                                <div class="element-item-overlay"><span>Shoulder
+                                                                        Bag</span></div><img src="images/project-7.png"
+                                                                    alt="alternative">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid">
+                                                        <div class="element-item design marketing">
+                                                            <a class="popup-with-move-anim" href="#project-7">
+                                                                <div class="element-item-overlay"><span>Shoulder
+                                                                        Bag</span></div><img src="images/project-7.png"
+                                                                    alt="alternative">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid">
+                                                        <div class="element-item design marketing">
+                                                            <a class="popup-with-move-anim" href="#project-7">
+                                                                <div class="element-item-overlay"><span>Shoulder
+                                                                        Bag</span></div><img src="images/project-7.png"
+                                                                    alt="alternative">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid">
+                                                        <div class="element-item design marketing">
+                                                            <a class="popup-with-move-anim" href="#project-7">
+                                                                <div class="element-item-overlay"><span>Shoulder
+                                                                        Bag</span></div><img src="images/project-7.png"
+                                                                    alt="alternative">
+                                                            </a>
+                                                        </div>
+                                                    </div>  
+                                                    <!-- end of grid -->
+                                                    <!-- end of filter -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of Purchases -->
+
+
+
+                                    <!-- Lightbox -->
+                                    <div id="project-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
+                                        <div class="row">
+                                            <button title="Close (Esc)" type="button"
+                                                class="mfp-close x-button">×</button>
+                                            <div class="col-lg-8">
+                                                <img class="img-fluid" src="images/project-7.png" alt="alternative">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <h3>Shoulder Bag</h3>
+                                                <h3>$20.99</h3>
+                                                <hr class="line-heading">
+                                                <p>Our man's shoulder bag is a versatile and stylish accessory designed
+                                                    specifically for men to carry their essentials in a convenient and
+                                                    fashionable way.</p>
+                                                <p>These bags are typically designed with a single shoulder strap that
+                                                    allows for easy cross-body or over-the-shoulder carrying.</p>
+                                                <div class="testimonial-container">
+                                                    <p class="testimonial-author">Team Serg's Online Shop</p>
+                                                </div>
+                                                <div class="size">
+                                                    <label class="size-select" for="size-select">Size:</label>
+                                                    <select id="size-select">
+                                                        <option value="small">Small</option>
+                                                        <option value="medium">Medium</option>
+                                                        <option value="large">Large</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <a class="btn-outline-reg mfp-close as-button" href="#Purchases">BACK</a>
+                                            <p><span id="quantity"></span></p>
+                                            <button id="addCartBtn">ADD TO CART</button>
+                                        </div>
+                                    </div>
+                <!-- end of lightbox -->
+                <div id="login" style="display: none;">
+                <h1 class="logintitle">LOG IN HERE</h1>
+                <div class="custom-container">
+                    <div class="custom-form">
+                        <form id="customLoginForm" data-toggle="validator" data-focus="false"
+                            class="custom-down">
+                            <!-- Login Form -->
+                            <div class="custom-form-group">
+                                <input class="form-control-input" type="text" id="customName"
+                                    required>
+                                <label class="label-control">Name</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input type="email" class="form-control-input" id="customEmail"
+                                    required>
+                                <label class="label-control">Email</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input class="form-control-input" type="password"
+                                    id="customPassword" required>
+                                <label class="label-control">Password</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <hr>
+                            <div class="form-group checkbox">
+                                <input type="checkbox"
+                                    required>Remember Me
+                            </div>
+                            <hr>
+                            <div class="custom-form-group">
+                                <button type="submit"
+                                    class="custom-form-control-submit-button" onclick="login()">LOG IN</button>
+                            </div>
+                        </form>
+                        <hr>
+                        <button class="OtherPage" onclick="showSignupForm()">Create an Account?</button>
+                    </div>
+                </div>
+            </div>
+                <!-- end of log in form -->
+                <div id="signup" style="display: none;">
+                <h1 class="signuptitle">SIGN UP HERE</h1>
+                <div class="custom-container1">
+                    <div class="custom-form1">
+                        <form id="customRegistrationForm" data-toggle="validator"
+                            data-focus="false">
+                            <!-- Registration Form -->
+                            <div class="custom-form-group">
+                                <input type="text" class="form-control-input" id="customNameReg"
+                                    required>
+                                <label class="label-control">Name</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input type="text" class="form-control-input" id="customSurname"
+                                    required>
+                                <label class="label-control">Last Names</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input type="email" class="form-control-input" id="customEmailReg"
+                                    required>
+                                <label class="label-control">Email</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input class="form-control-input" type="password"
+                                    id="customPasswordReg" required>
+                                <label class="label-control">Password</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <div class="custom-form-group">
+                                <input class="form-control-input" type="password"
+                                    id="customConfirmPassword" required>
+                                <label class="label-control">Confirm Your Password</label>
+                                <div class="custom-help-block with-errors"></div>
+                            </div>
+                            <hr>
+                            <div class="form-group checkbox">
+                                <input type="checkbox"
+                                    required>Remember Me
+                            </div>
+                            <hr>
+                            <div class="custom-form-group">
+                                <button type="submit"
+                                    class="custom-form-control-submit-button" onclick="register()">SIGN UP</button>
+                            </div>
+                        </form>
+                        <hr>
+                        <button class="OtherPage" onclick="showLoginForm()">Do you have an Account?</button>
+                    </div>
+                </div>
+            </div>
+                <!-- end of sign up-->
+                <!-- Contact -->
+                <div id="contact" class="form-2">
+                    <div class="container">
+                        <div class="row">
+                                <div class="text-container">
+                                    <div class="section-title">CONTACT</div>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">+34
+                                                614
+                                                188 876</a></li>
+                                        <li><i class="fas fa-envelope"></i><a
+                                                href="mailto:armour.american.councils@gmail.com">ghazaryan7.y@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        
+
+                        <!-- Contact Form -->
+                        <div class="containerlight">
+                            <form id="contactForm" data-toggle="validator" data-focus="false">
+                            </form>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="name" required>
+                                <label class="label-control">Name</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control-input" id="email" required>
+                                <label class="label-control">Email</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control-textarea" id="message"
+                                    required></textarea>
+                                <label class="label-control">Your Message</label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="cterms" value="Agreed-to-Terms"
+                                    required> I Agree With What Has Been Mentioned
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                and
+                                <a href="terms-conditions.html">Terms And Conditions</a>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <button class="form-control-submit-button" onclick="sendMail()">SEND
+                                MESSAGE</button>
+                            <div class="form-message">
+                                <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end of contact -->
+            <!-- Footer -->
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 text-container">
+                            <ul class="social-list">
+                                <li><a href="https://www.instagram.com/_serg___/"
+                                        target="_blank"><ion-icon name="logo-instagram"></ion-icon>
+                                        Instagram</a></li>
+                                <li><a href="https://twitter.com/Sergey991038722"
+                                        target="_blank"><ion-icon name="logo-twitter"></ion-icon>
+                                        Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            &copy; 2023 SG Online Shop. All rights reserved.
+                        </div>
+                        <div class="col-md-4 text-container">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Scripts -->
+            <script src="js/jquery.min.js"></script>
+            <!-- jQuery for Bootstrap's JavaScript plugins -->
+            <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+            <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+            <script src="js/jquery.easing.min.js"></script>
+            <!-- jQuery Easing for smooth scrolling between anchors -->
+            <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+            <script src="js/jquery.magnific-popup.js"></script>
+            <!-- Magnific Popup for lightboxes -->
+            <script src="js/morphext.min.js"></script>
+            <!-- Morphtext rotating text in the header -->
+            <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+            <script src="js/validator.min.js"></script>
+            <!-- Validator.js - Bootstrap plugin that validates forms -->
+            <script src="js/scripts.js"></script> <!-- Custom scripts -->
+            <script src="js/script.js"></script>
+            <script src="js/email.js"></script>
+
+            <script type="module"
+                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule
+                    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
