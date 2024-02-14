@@ -52,6 +52,16 @@ html {
 	height: 100%;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(211, 211, 211);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #59777a;
+    border-radius: 6px;
+}
+
 body,
 p {
 	color: #787976;
